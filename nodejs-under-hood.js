@@ -10,13 +10,13 @@
 
 // NOTE: Queues of Microtasks in NodeJS (Task queue takes one by one, not all tasks at once):
 
-// 1. Next tick queue: [ nt1 ]
-process.nextTick(() => {});
-
-// 2. Promises and queueMicrotasks: [ pr1 ]
+// 1. Promises and queueMicrotasks: [ pr1 ]
 promise.then(() => {});
 promise.catch(() => {});
 queueMicrotasks(() => {});
+
+// 2. Next tick queue: [ nt1 ]
+process.nextTick(() => {});
 
 // ------------------------------------------------
 
